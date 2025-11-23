@@ -1,11 +1,18 @@
+import { VercelRequest, VercelResponse } from '@vercel/node';
 import fs from "node:fs";
 import path from "node:path";
 import express from "express";
-import { app } from "./app";
 import { storage } from "./storage";
 import { insertContactMessageSchema } from "../shared/schema";
 
-// Register API routes directly
+// Create Express app
+const app = express();
+
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+// API routes
 app.post("/api/contact", async (req, res) => {
   try {
     const validatedData = insertContactMessageSchema.parse(req.body);
@@ -38,13 +45,12 @@ app.get("/api/contact/messages", async (req, res) => {
   }
 });
 
+// Static file serving
 const distPath = path.resolve(process.cwd(), "dist");
-
-// Serve static files
 app.use(express.static(distPath));
 
-// Fallback to index.html for SPA routing
-app.use("*", (_req, res) => {
+// SPA fallback
+app.get("*", (_req, res) => {
   const indexPath = path.resolve(distPath, "index.html");
   if (fs.existsSync(indexPath)) {
     res.sendFile(indexPath);
@@ -53,5 +59,7 @@ app.use("*", (_req, res) => {
   }
 });
 
-// Export the Express app as a Vercel serverless function
-export default app;
+// Vercel serverless function handler
+export default (req: VercelRequest, res: VercelResponse) => {
+  return app(req, res);
+};
