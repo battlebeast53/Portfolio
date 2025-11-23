@@ -15,7 +15,7 @@ export function ProjectsSection() {
       techStack: ["Next.js", "JavaScript", "Google Gemini API", "Clerk", "Convex"],
       aiTools: ["Google Gemini API", "AI Prompt Engineering"],
       githubUrl: "https://github.com/battlebeast53/AI-Trip-Planner",
-      liveUrl: "#",
+      liveUrl: "https://ai-trip-planner-xi-three.vercel.app/",
     },
     {
       title: "Monsoon Ecommerce Platform",
@@ -25,7 +25,7 @@ export function ProjectsSection() {
       techStack: ["Node.js", "Express.js", "MongoDB", "EJS", "Bootstrap", "Razorpay"],
       aiTools: [],
       githubUrl: "https://github.com/battlebeast53/Monsoon-Ecommerce",
-      liveUrl: "#",
+      liveUrl: "https://monsoon-ecommerce.onrender.com/home",
     },
   ];
 
