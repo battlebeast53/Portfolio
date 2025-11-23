@@ -1,27 +1,57 @@
 import fs from "node:fs";
 import path from "node:path";
-import { type Server } from "node:http";
+import express from "express";
+import { app } from "./app";
+import { storage } from "./storage";
+import { insertContactMessageSchema } from "../shared/schema";
 
-import express, { type Express } from "express";
-import runApp from "./app";
-
-export async function serveStatic(app: Express, _server: Server) {
-  const distPath = path.resolve(import.meta.dirname, "..", "dist");
-
-  if (!fs.existsSync(distPath)) {
-    throw new Error(
-      `Could not find the build directory: ${distPath}, make sure to build the client first`,
-    );
+// Register API routes directly
+app.post("/api/contact", async (req, res) => {
+  try {
+    const validatedData = insertContactMessageSchema.parse(req.body);
+    const message = await storage.createContactMessage(validatedData);
+    
+    res.json({ 
+      success: true, 
+      message: "Message received successfully",
+      id: message.id 
+    });
+  } catch (error) {
+    console.error("Error creating contact message:", error);
+    res.status(400).json({ 
+      success: false, 
+      message: "Invalid request data" 
+    });
   }
+});
 
-  app.use(express.static(distPath));
+app.get("/api/contact/messages", async (req, res) => {
+  try {
+    const messages = await storage.getAllContactMessages();
+    res.json({ success: true, messages });
+  } catch (error) {
+    console.error("Error fetching contact messages:", error);
+    res.status(500).json({ 
+      success: false, 
+      message: "Failed to fetch messages" 
+    });
+  }
+});
 
-  // fall through to index.html if the file doesn't exist
-  app.use("*", (_req, res) => {
-    res.sendFile(path.resolve(distPath, "index.html"));
-  });
-}
+const distPath = path.resolve(process.cwd(), "dist");
 
-(async () => {
-  await runApp(serveStatic);
-})();
+// Serve static files
+app.use(express.static(distPath));
+
+// Fallback to index.html for SPA routing
+app.use("*", (_req, res) => {
+  const indexPath = path.resolve(distPath, "index.html");
+  if (fs.existsSync(indexPath)) {
+    res.sendFile(indexPath);
+  } else {
+    res.status(404).send("Build files not found");
+  }
+});
+
+// Export the Express app as a Vercel serverless function
+export default app;
