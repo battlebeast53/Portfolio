@@ -1,0 +1,57 @@
+You are an expert full-stack and AI-integrated web developer. Build a professional portfolio website that proves strong frontend skills, coding capability, and experience with AI collaboration tools (Cursor, GitHub Copilot, Replit AI).
+
+📎 Note: I am attaching my resume. Use my real projects, skills, certifications, and achievements from the resume and showcase them in a structured and visually appealing way across the portfolio.
+
+🛠️ Website Requirements:
+
+Use HTML, Tailwind CSS, and JavaScript and react.
+
+Clean, modern, tech-style UI with smooth animations (Framer Motion-like), hover transitions, soft shadows.
+
+Include code-themed UI, terminal-style intro, syntax-highlighted code snippet gallery, and AI chat-style project demos.
+
+🔹 Website Sections:
+
+Hero Section – Name, role (Full Stack Web Engineer), typing animation, “Hire Me” and “Download Resume” buttons.
+
+About Me Section – Use resume details. Mention coding expertise, AI-assisted development experience (Cursor, Copilot, Replit), problem-solving and web development specialization.
+
+Skills Section – Use interactive cards or charts showing Frontend (React, Tailwind), Backend (Node.js, Express), Databases (MongoDB, SQL), AI Integration (OpenAI, Gemini, LangChain), Tools (Git, Docker, Postman).
+
+Projects Section (use projects from resume) – For 3-4 projects, display:
+
+Project title
+
+Description
+
+Tech stack
+
+AI tools used (if any)
+
+GitHub / Live Demo links
+
+Code Showcase Gallery – Display real code snippets (JS/Python/C++/Node) from resume-based projects using syntax highlighting.
+
+Certifications & Achievements – Pull from resume; display logos (OpenAI, AWS, Coursera, Kaggle, Microsoft).
+
+Testimonials / Trust Section – Show hypothetical or portfolio-style feedback that proves competence and reliability.
+
+Contact Section – Working contact form (Formspree or JS), social links (GitHub, LinkedIn, Email, Portfolio).
+
+✨ Design Expectations:
+
+Minimal professional UI with glassmorphism / gradient backgrounds.
+
+Dark & light mode support preferred.
+
+Use modern fonts (Poppins, Inter, Montserrat).
+
+Fully responsive (desktop, tablet, mobile).
+
+Use lucide-react or FontAwesome icons.
+
+🎯 Important Features:
+
+Mention code quality, modular component structure, and API integration simulating client trust.
+
+Include smooth-scroll navigation with active state highlighting.
