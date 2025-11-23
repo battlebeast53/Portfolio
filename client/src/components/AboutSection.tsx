@@ -6,7 +6,6 @@ export function AboutSection() {
   const stats = [
     { icon: Award, label: "CGPA", value: "9.52", color: "text-blue-500" },
     { icon: Code2, label: "Problems Solved", value: "300+", color: "text-purple-500" },
-    { icon: Laptop, label: "Projects Built", value: "10+", color: "text-cyan-500" },
   ];
 
   return (
@@ -53,7 +52,7 @@ export function AboutSection() {
               efficient, production-ready applications.
             </p>
 
-            <div className="grid grid-cols-3 gap-4 pt-6">
+            <div className="grid grid-cols-2 gap-4 pt-6">
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
