@@ -85,9 +85,11 @@ export function HeroSection() {
           <Button onClick={scrollToContact} size="lg" data-testid="button-hire-me">
             Hire Me
           </Button>
-          <Button variant="outline" size="lg" data-testid="button-download-resume">
-            <Download className="mr-2 h-5 w-5" />
-            Download Resume
+          <Button variant="outline" size="lg" asChild data-testid="button-download-resume">
+            <a href="/Harshit_Pandhare_Resume.pdf" download="Harshit_Pandhare_Resume.pdf">
+              <Download className="mr-2 h-5 w-5" />
+              Download Resume
+            </a>
           </Button>
         </div>
 
