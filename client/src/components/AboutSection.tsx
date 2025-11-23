@@ -5,7 +5,7 @@ import profileImage from "@assets/generated_images/professional_developer_headsh
 export function AboutSection() {
   const stats = [
     { icon: Award, label: "CGPA", value: "9.52", color: "text-blue-500" },
-    { icon: Code2, label: "Problems Solved", value: "300+", color: "text-purple-500" },
+    { icon: Code2, label: "Problems Solved", value: "400+", color: "text-purple-500" },
   ];
 
   return (
@@ -48,7 +48,7 @@ export function AboutSection() {
             <p className="text-lg text-muted-foreground leading-relaxed">
               I have hands-on experience with{" "}
               <span className="text-foreground font-semibold">AI integration tools</span> including Google Gemini API,
-              and I'm proficient in using development tools like GitHub, Cursor, and Replit AI to build
+              and I'm proficient in using development tools like GitHub, Cursor to build
               efficient, production-ready applications.
             </p>
 

@@ -15,15 +15,15 @@ export function AchievementsSection() {
     {
       platform: "LeetCode",
       rating: 1493,
-      badge: "300+ Problems",
+      badge: "400+ Problems",
       color: "from-yellow-500 to-orange-500",
       stats: "Highest Contest Rating",
       url: "https://leetcode.com",
     },
     {
       platform: "Codeforces",
-      rating: 1102,
-      badge: "Specialist",
+      rating: 1230,
+      badge: "Pupil",
       color: "from-cyan-500 to-blue-600",
       stats: "Highest Contest Rating",
       url: "https://codeforces.com",

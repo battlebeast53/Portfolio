@@ -83,7 +83,7 @@ export function HeroSection() {
 
         <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
           <Button onClick={scrollToContact} size="lg" data-testid="button-hire-me">
-            Hire Me
+            Contact Me
           </Button>
           <Button variant="outline" size="lg" asChild data-testid="button-download-resume">
             <a href="/Harshit_Pandhare_Resume.pdf" download="Harshit_Pandhare_Resume.pdf">
