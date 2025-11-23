@@ -46,7 +46,7 @@ app.get("/api/contact/messages", async (req, res) => {
 });
 
 // Static file serving
-const distPath = path.resolve(process.cwd(), "dist");
+const distPath = path.resolve(process.cwd(), "dist/public");
 app.use(express.static(distPath));
 
 // SPA fallback
